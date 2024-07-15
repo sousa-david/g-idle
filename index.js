@@ -4,7 +4,7 @@ const app = express();
 
 app.get('/', (req, res) => {
     console.log(req);
-    return res.status(234).send(`Servidor rodando em ${process.env.PORT}`);
+    return res.status(234).send(`Servidor rodando na porta ${process.env.PORT}`);
 });
 
 app.get('/recordings', async (req, res) => {
@@ -31,7 +31,7 @@ app.get('/members', async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
