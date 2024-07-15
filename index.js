@@ -4,7 +4,7 @@ const app = express();
 
 app.get('/recordings', async (req, res) => {
     try {
-        const database = client.db('database');
+        const database = client.db('idle_db');
         const collection = database.collection('recordings');
         const dados = await collection.find({}).toArray();
         res.json(dados);
@@ -16,7 +16,7 @@ app.get('/recordings', async (req, res) => {
 
 app.get('/members', async (req, res) => {
     try {
-        const database = client.db('database');
+        const database = client.db('idle_db');
         const collection = database.collection('members');
         const dados = await collection.find({}).toArray();
         res.json(dados);
