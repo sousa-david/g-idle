@@ -2,6 +2,11 @@ const express = require('express');
 const client = require('./database');
 const app = express();
 
+app.get('/', (req, res) => {
+    console.log(req);
+    return res.status(234).send(`Servidor rodando em ${process.env.PORT}`);
+});
+
 app.get('/recordings', async (req, res) => {
     try {
         const database = client.db('idle_db');
